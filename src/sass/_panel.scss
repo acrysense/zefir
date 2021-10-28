@@ -1,0 +1,142 @@
+.panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 44px 0;
+    width: 100%;
+    border-right: 1px solid $dark-color;
+
+    @media screen and (min-width: 1024px) {
+        max-width: 200px;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1023px) {
+        max-width: 130px;
+    }
+    @media screen and (max-width: 767px) {
+        bottom: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px 15px;
+        background: $primary-color;
+        border-right: none;
+        border-bottom: 1px solid $dark-color;
+    }
+
+    &__logotype {
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            max-width: 85px;
+        }
+        @media screen and (max-width: 767px) {
+            max-width: 75px;
+        }
+    }
+    &__auth {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/dist/sprite.svg#icon-auth);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+}
+
+// hamburger
+.hamburger {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    padding: 0;
+    margin: 0;
+    min-width: 50px;
+    height: 70px;
+    font-size: 0;
+    text-align: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    &:focus {
+        outline: none;
+    }
+
+    @media screen and (hover: hover) {
+        &:hover {
+            .hamburger__inner {
+                background: $yellow-color;
+            }
+        }
+    }
+    @media screen and (min-width: 768px) {
+        top: 50vh;
+    }
+    @media screen and (max-width: 767px) {
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 40px;
+        height: 40px;
+    }
+
+    &--active {
+        .hamburger__inner {
+            background: $yellow-color;
+            
+            @media screen and (min-width: 768px) {
+                &:first-child {
+                    transform: rotate(-45deg) translateX(5px);
+                }
+                &:last-child {
+                    transform: rotate(45deg) translateX(-5px);
+                }
+            }
+            @media screen and (max-width: 767px) {
+                &:first-child {
+                    //top: 0;
+                    transform: rotate(45deg) translateY(3.5px);
+                }
+                &:last-child {
+                    //top: 0;
+                    transform: rotate(-45deg) translateY(-3.5px);
+                }
+            }
+        }
+    }
+    &__inner {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 70px;
+        background: $light-color;
+        transition: all 0.4s ease-in-out;
+
+        @media screen and (min-width: 768px) {
+            top: 0;
+            &:first-child {
+                left: 20px;
+            }
+            &:last-child {
+                left: 30px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            left: 0;
+            right: 0;
+            width: 40px;
+            height: 1px;
+            &:first-child {
+                top: 17.5px;
+            }
+            &:last-child {
+                top: 22.5px;
+            }
+        }
+    }
+}
