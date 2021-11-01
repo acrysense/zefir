@@ -238,6 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // MOBILE MENU
     const hamburger = document.getElementById('hamburger-toggle')
+    const navMenu = document.querySelector('.nav-menu')
 
     if (hamburger) {
         hamburger.addEventListener('click', (event) => {
@@ -245,11 +246,72 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (hamburger.classList.contains('hamburger--active')) {
                 hamburger.classList.remove('hamburger--active')
+                navMenu.classList.remove('nav-menu--active')
                 document.body.classList.remove('scroll-disabled')
             } else {
                 hamburger.classList.add('hamburger--active')
+                navMenu.classList.add('nav-menu--active')
                 document.body.classList.add('scroll-disabled')
             }
         })
     }
+
+    // SWIPER
+    const howitworksSlider = document.querySelector('.howitworks__slider .swiper-container')  
+
+    if (howitworksSlider) {
+        const mySwiperHowitworks = new Swiper(howitworksSlider, {
+            slidesPerView: 'auto',
+            centeredSlides: true,
+            centeredSlidesBounds: true,
+            breakpoints: {
+                768: {
+                    slidesPerView: '1',
+                    direction: 'vertical',
+                    centeredSlidesBounds: false,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        })
+    }
+
+    // SCROLL
+    let prevScrollpos = window.pageYOffset;
+
+    function getCoords(elem) {
+        let box = elem.getBoundingClientRect();
+        
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset
+        };
+    }
+
+    window.addEventListener('scroll', () => {
+        if (document.querySelector('.panel') && window.innerWidth >= 768) {
+            const panelHeight = document.querySelector('.panel').getBoundingClientRect().height;
+            const sectionWhite = document.querySelector('.section--white')
+            const sectionWhiteNext = document.querySelector('.section--white + .section--black')
+
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos || prevScrollpos <= 0) { // If up
+                if (window.pageYOffset <= (getCoords(sectionWhite).top - document.documentElement.clientHeight)) {
+                    document.querySelector('.hamburger').classList.remove('hamburger--black')
+                }
+            } else { // If down
+                if (window.pageYOffset >= (getCoords(sectionWhite).top - document.documentElement.clientHeight)) {
+                    if (getCoords(sectionWhite).top <= getCoords(document.querySelector('.hamburger')).top) {
+                        document.querySelector('.hamburger').classList.add('hamburger--black')
+                    }
+                } else if (window.pageYOffset >= (getCoords(sectionWhiteNext).top - document.documentElement.clientHeight)) {
+                    document.querySelector('.hamburger').classList.remove('hamburger--black')
+                }
+                console.log(window.pageYOffset, (getCoords(sectionWhiteNext).top - document.documentElement.clientHeight))
+            }
+            prevScrollpos = currentScrollPos;
+        }
+    })
 });

@@ -12,8 +12,9 @@
 @include font('Hauora', normal, 300, '../fonts/Hauora/Hauora-Light.woff2', '../fonts/Hauora/Hauora-Light.woff', '../fonts/Hauora/Hauora-Light.eot');
 @include font('Hauora', normal, 400, '../fonts/Hauora/Hauora-Regular.woff2', '../fonts/Hauora/Hauora-Regular.woff', '../fonts/Hauora/Hauora-Regular.eot');
 
-@include font('NeutralFace', normal, 400, '../fonts/NeutralFace/NeutralFaceBold.woff2', '../fonts/NeutralFace/NeutralFaceBold.woff', '../fonts/NeutralFace/NeutralFaceBold.eot');
+@include font('NeutralFace', normal, 400, '../fonts/NeutralFace/NeutralFaceRegular.woff2', '../fonts/NeutralFace/NeutralFaceRegular.woff', '../fonts/NeutralFace/NeutralFaceRegular.eot');
 @include font('NeutralFace', normal, 700, '../fonts/NeutralFace/NeutralFaceBold.woff2', '../fonts/NeutralFace/NeutralFaceBold.woff', '../fonts/NeutralFace/NeutralFaceBold.eot');
 
 // IMPORT SECTION
 @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/swiper/swiper.scss'; // Swiper

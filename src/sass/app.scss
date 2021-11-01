@@ -1,21 +1,11 @@
 @import "config"; // Always at the beginning
 @import "panel";
+@import "menu";
 
-// content
-.content {
-    @media screen and (min-width: 1024px) {
-        margin-left: 200px;
-        width: calc(100% - 200px);
-    }
-    @media screen and (min-width: 768px) and (max-width: 1023px) {
-        margin-left: 130px;
-        width: calc(100% - 130px);
-    }
+// wrapper
+.wrapper {
     @media screen and (max-width: 767px) {
         margin-top: var(--height);
-        margin-left: 15px;
-        width: calc(100% - 15px);
-        border-left: 1px solid $dark-color;
     }
 }
 
@@ -52,35 +42,13 @@
         }
     }
     &__btn {
-        display: block;
         margin-top: -120px;
-        min-width: 200px;
-        min-height: 200px;
-        max-width: 200px;
-        max-height: 200px;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
-        transition: transform 0.3s ease-in-out;
 
-        @media screen and (hover: hover) {
-            &:hover {
-                transform: rotate(180deg);
-            }
-        }
         @media screen and (min-width: 768px) and (max-width: 1023px) {
             margin-top: -75px;
-            min-width: 120px;
-            min-height: 120px;
-            max-width: 120px;
-            max-height: 120px;
         }
         @media screen and (max-width: 767px) {
             margin: 40px auto 0;
-            min-width: 130px;
-            min-height: 130px;
-            max-width: 130px;
-            max-height: 130px;
         }
     }
     &__description {
@@ -102,17 +70,36 @@
 }
 
 .main-title {
+    font-family: $neutralface;
+    font-size: 80px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     span {
         display: block;
     }
     span + span {
         margin-top: 5px;
         margin-left: 290px;
+    }
 
-        @media screen and (min-width: 768px) and (max-width: 1023px) {
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        font-size: 50px;
+        span + span {
             margin-left: 164px;
         }
-        @media screen and (max-width: 767px) {
+    }
+    @media screen and (min-width: 768px) {
+        &--mobile {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 30px;
+        &--desktop {
+            display: none;
+        }
+        span + span {
             margin-top: 3px;
             margin-left: 0;
         }
@@ -161,8 +148,27 @@
         }
     }
     &__link {
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 1px;
+            background: $yellow-color;
+            transition: all 0.4s;
+        }
+
         @media screen and (hover: hover) {
             &:hover {
+                color: $white-color;
+                &::before {
+                    width: 100%;
+                }
+            }
+            &:active {
                 color: $yellow-color;
             }
         }
@@ -213,5 +219,555 @@
             margin-top: 30px;
             font-size: 12px;
         }
+    }
+}
+
+// advantages
+.advantages {
+    overflow: hidden;
+    &__line {
+        border-top: 1px solid $grey-color;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 15px 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 4px 0;
+        }
+    }
+    &__wrapper {
+        padding-top: 100px;
+        border-top: 1px solid $grey-color;
+
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 0;
+            }
+        }
+    }
+    &__list {
+        @media screen and (min-width: 1024px) {
+            margin-right: calc((50% - 50vw) + 100px);
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            margin-right: calc((50% - 50vw) + 65px);
+        }
+        @media screen and (min-width: 768px) {
+            display: flex;
+            flex: 1 1 100%;
+            padding-right: 20px;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        @media screen and (max-width: 767px) {
+            border-top: 1px solid $grey-color;
+            border-bottom: 1px solid $grey-color;
+        }
+    }
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        border: 1px solid $grey-color;
+
+        @media screen and (min-width: 1024px) {
+            max-width: 381px;
+            min-width: 381px;
+            min-height: 400px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 20px;
+            max-width: 244px;
+            min-width: 244px;
+            min-height: 350px;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 30px 20px;
+            border: 0;
+        }
+    }
+    &__item + &__item {
+        @media screen and (min-width: 1024px) {
+            margin-left: 30px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            margin-left: 20px;
+        }
+        @media screen and (max-width: 767px) {
+            border-top: 1px solid $grey-color;
+        }
+    }
+    &__icon {
+        width: 70px;
+        height: 70px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            width: 60px;
+            height: 60px;
+        }
+        @media screen and (max-width: 767px) {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    &__title {
+        font-size: 16px;
+        font-weight: 300;
+
+        @media screen and (max-width: 1023px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-top: 40px;
+        }
+    }
+}
+
+// how it works
+.howitworks {
+    overflow: hidden;
+    &__line {
+        padding: 14px 0;
+        border-top: 1px solid $grey-color;
+        border-bottom: 1px solid $grey-color;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 15px 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 4px 0;
+        }
+    }
+    &__wrapper {
+        margin-top: 100px;
+        border-top: 1px solid $grey-color;
+        border-bottom: 1px solid $grey-color;
+
+        @media screen and (max-width: 767px) {
+            margin-top: 0;
+            border-top: none;
+            .container {
+                padding: 0;
+            }
+        }
+    }
+    &__inner {
+        display: flex;
+        width: 100%;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 1024px) {
+            flex: 0 0 60%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            flex: 1 1 40%;
+        }
+        @media screen and (min-width: 768px) {
+            border-right: 1px solid $grey-color;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 40px 20px;
+        }
+    }
+    &__slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        counter-reset: item-counter;
+        .swiper-container {
+            max-height: 410px;
+            width: 100%;
+            height: 100%;
+    
+            @media screen and (min-width: 768px) and (max-width: 1023px) {
+                max-height: 300px;
+            }
+            @media screen and (max-width: 767px) {
+                .swiper-slide-prev,
+                .swiper-slide-next {
+                    .howitworks__item {
+                        border: 1px solid $grey-color;
+                    }
+                }
+            }
+        }
+        .swiper-button-prev,
+        .swiper-button-next {
+            display: none;
+            position: absolute;
+            right: 0;
+            z-index: 1;
+            width: 50px;
+            height: 50%;
+            border: 1px solid $primary-color;
+            transition: all 0.4s;
+            &::before {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 100%;
+                background-image: url(../img/dist/sprite.svg#icon-btn-arrow);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+            }
+            &:hover:not(.swiper-button-disabled) {
+                background: $yellow-color;
+                border: 1px solid $yellow-color;
+            }
+        }
+        .swiper-button-prev {
+            top: 0;
+        }
+        .swiper-button-next {
+            bottom: 0;
+        }
+        .swiper-button-disabled {
+            border: 1px solid $grey-color;
+        }
+        .swiper-slide {
+            width: 300px;
+        }
+    }
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 410px;
+        height: 410px;
+        text-align: center;
+        border: 1px solid $primary-color;
+        border-radius: 50%;
+        &::before {
+            counter-increment: item-counter;
+            content: '0' counter(item-counter);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 50px;
+            min-height: 50px;
+            font-size: 18px;
+            font-weight: normal;
+            text-align: center;
+            border: 1px solid $primary-color;
+            border-radius: 50%;
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            margin: 0;
+            width: 300px;
+            height: 300px;
+            &::before {
+                min-width: 40px;
+                min-height: 40px;
+                font-size: 14px;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            width: 300px;
+            height: 300px;
+            &::before {
+                min-width: 30px;
+                min-height: 30px;
+                font-size: 12px;
+            }
+        }
+    }
+    &__title {
+        margin: 0 auto;
+        max-width: 213px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 300;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        min-height: 540px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width: 1024px) {
+            flex: 1 1 40%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            flex: 1 1 60%;
+            min-height: 340px;
+        }
+        @media screen and (min-width: 768px) {
+            margin-right: calc(50% - 50vw);
+        }
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+}
+
+// difference
+.difference {
+    overflow: hidden;
+    &__line {
+        padding: 14px 0;
+        border-top: 1px solid $grey-color;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 15px 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 4px 0;
+        }
+    }
+    &__title {
+        @media screen and (max-width: 767px) {
+            &--limit {
+                position: relative;
+                overflow: hidden;
+                max-width: 247px;
+                white-space: nowrap;
+                text-overflow: clip;
+                &::after {
+                    content: '.';
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+    &__wrapper {
+        border-top: 1px solid $grey-color;
+
+        @media screen and (max-width: 767px) {
+            .container {
+                padding: 0;
+            }
+        }
+    }
+    &__inner {
+        display: flex;
+        width: 100%;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media screen and (min-width: 1024px) {
+            flex: 0 0 60%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            flex: 1 1 40%;
+        }
+        @media screen and (min-width: 768px) {
+            border-right: 1px solid $grey-color;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 40px 20px;
+        }
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        min-height: 540px;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width: 1024px) {
+            flex: 1 1 40%;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            flex: 1 1 60%;
+            min-height: 340px;
+        }
+        @media screen and (min-width: 768px) {
+            margin-right: calc(50% - 50vw);
+        }
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            min-height: 240px;
+            border-top: 1px solid $grey-color;
+        }
+    }
+}
+
+// contacts
+.contacts {
+    overflow: hidden;
+
+    @media screen and (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-height: calc(100vh - var(--height));
+    }
+
+    &__top {
+        border-top: 1px solid $dark-color;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 15px 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 4px 0;
+        }
+    }
+    &__wrapper {
+        border-top: 1px solid $dark-color;
+
+        @media screen and (max-width: 767px) {
+            padding-top: 40px;
+            .container {
+                padding: 0;
+            }
+        }
+    }
+    &__inner {
+        display: flex;
+        width: 100%;
+
+        @media screen and (max-width: 767px) {
+            flex-direction: column-reverse;
+        }
+    }
+    &__img {
+        position: relative;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media screen and (min-width: 768px) {
+            flex: 1 1 60%;
+            margin-left: calc(50% - 50vw);
+        }
+        @media screen and (max-width: 767px) {
+            order: 2;
+            width: 100%;
+            height: 176px;
+            border-top: 1px solid $dark-color;
+            img {
+                top: 10px;
+            }
+        }
+    }
+    &__column {
+        background: $primary-color;
+
+        @media screen and (min-width: 768px) {
+            flex: 0 0 40%;
+            text-align: center;
+            border-right: 1px solid $dark-color;
+            border-left: 1px solid $dark-color;
+            &--mobile {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            order: 3;
+            text-align: left;
+            border-top: 1px solid $dark-color;
+            &:not(.contacts__column--mobile) {
+                .contacts__item:last-child {
+                    display: none;
+                }
+            }
+            &--mobile {
+                order: 1;
+            }
+        }
+    }
+    &__item {
+        padding: 60px 0;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            padding: 24px 0;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 18px 20px;
+        }
+    }
+    &__item + &__item {
+        border-top: 1px solid $dark-color;
+    }
+    &__link {
+        font-size: 18px;
+        font-weight: normal;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+    &__text {
+        display: block;
+        font-size: 14px;
+        font-weight: normal;
+        &--link {
+            text-decoration: underline;
+        }
+
+        @media screen and (hover: hover) {
+            &--link {
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        @media screen and (max-width: 1023px) {
+            font-size: 10px;
+        }
+    }
+    &__text + &__text {
+        margin-top: 22px;
     }
 }
