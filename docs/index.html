@@ -13,7 +13,7 @@
     <div class="panel">
         <a href="index.html" class="logotype panel__logotype">
             <img src="img/dist/logotype.svg" alt="ZEFIR">
-            <!--<img src="img/dist/logotype-black.svg" alt="ZEFIR" class="logotype__black">-->
+            <img src="img/dist/logotype-black.svg" alt="ZEFIR" class="logotype__black">
         </a>
         <button class="hamburger" id="hamburger-toggle" aria-label="Меню">
             <span class="hamburger__inner"></span>
@@ -129,7 +129,8 @@
                     <div class="products__line products__line--horizontal"></div>
                     <div class="products__line products__line--horizontal"></div>
                     <div class="products__line products__line--horizontal"></div>
-                    <div class="products__line products__line--vertical"></div>
+                    <div class="products__line products__line--horizontal"></div>
+                    <div class="products__line products__line--horizontal"></div>
                     <div class="products__line products__line--vertical"></div>
                     <div class="products__line products__line--vertical"></div>
                 </div>
@@ -351,8 +352,16 @@
                                 </div>
                             </div>
                             <div class="swiper-buttons">
-                                <div class="swiper-button-prev enabled"></div>
-                                <div class="swiper-button-next enabled"></div>
+                                <button class="swiper-button-prev swiper-button-disabled enabled">
+                                    <svg class="swiper-button-icon">
+                                        <use xlink:href="img/dist/sprite.svg#icon-arrow-left"></use>
+                                    </svg>
+                                </button>
+                                <button class="swiper-button-next enabled">
+                                    <svg class="swiper-button-icon">
+                                        <use xlink:href="img/dist/sprite.svg#icon-arrow-right"></use>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -446,8 +455,8 @@
                                             </div>
                                         </div>
                                         <div class="swiper-buttons">
-                                            <div class="swiper-button-prev"></div>
-                                            <div class="swiper-button-next"></div>
+                                            <button class="swiper-button-prev"></button>
+                                            <button class="swiper-button-next"></button>
                                         </div>
                                     </div>
                                 </div>
@@ -673,6 +682,6 @@
     <!-- End of difference table -->
     <!-- Scripts -->
     <script src="js/vendor.min.js"></script>
-    <script src="js/app.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
