@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zefir - Вход</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/vendor.min.css">
+    <link rel="stylesheet" href="css/app.min.css">
+</head>
+<body>
+    <!-- Panel -->
+    <div class="panel">
+        <a href="index.html" class="logotype panel__logotype">
+            <img src="img/dist/logotype.svg" alt="ZEFIR">
+            <img src="img/dist/logotype-black.svg" alt="ZEFIR" class="logotype__black">
+        </a>
+        <button class="hamburger" id="hamburger-toggle" aria-label="Меню">
+            <span class="hamburger__inner"></span>
+            <span class="hamburger__inner"></span>
+        </button>
+        <a href="#" class="panel__auth" aria-label="Вход"></a>
+    </div>
+    <!-- End of panel -->
+    <!-- Wrapper -->
+    <div class="wrapper">
+        <!-- Auth -->
+        <section class="auth" id="auth">
+            <div class="container">
+                <div class="auth__wrapper">
+                    <h1 class="auth__title">Вход</h1>
+                    <a href="#" class="auth__btn btn btn--transparent">
+                        <svg>
+                            <use xlink:href="img/dist/sprite.svg#icon-google"></use>
+                        </svg>
+                        <span>Войти с помощью Google</span>
+                    </a>
+                    <form action="#" class="auth-form">
+                        <div class="input-group auth-form__group">
+                            <div class="input-group__control">
+                                <input type="password" class="input-group__input" id="input-name" placeholder="Имя" required>
+                                <label for="input-name" class="input-group__label">Имя</label>
+                                <svg class="input-group__icon">
+                                    <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
+                                </svg>
+                            </div>
+                            <span class="input-group__error" aria-live="polite">Ошибка</span>
+                        </div>
+                        <a href="#" class="auth-form__link">Забыли пароль?</a>
+                        <button class="auth-form__btn btn" disabled>Войти</button>
+                    </form>
+                    <span class="auth__text">Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a></span>
+                </div>
+            </div>
+        </section>
+        <!-- End of auth -->
+    </div>
+    <!-- End of wrapper -->
+    <!-- Nav menu -->
+    <div class="nav-menu">
+        <ul class="nav-menu__list">
+            <li class="nav-menu__item">
+                <a href="#about" class="nav-menu__link">О ПРОЕКТЕ</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#products" class="nav-menu__link">ZEFIR CENT BOT</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#products" class="nav-menu__link">ZEFIR OIL BOT</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#products" class="nav-menu__link">ZEFIR DOLLAR BOT</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#products" class="nav-menu__link">ZEFIR TRUST INVESTMENTS</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#advantages" class="nav-menu__link">ПОЧЕМУ МЫ</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#howitworks" class="nav-menu__link">КАК ЭТО РАБОТАЕТ</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#difference" class="nav-menu__link">ОТЛИЧИЕ ОТ TI</a>
+            </li>
+            <li class="nav-menu__item">
+                <a href="#contacts" class="nav-menu__link">КОНТАКТЫ</a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of nav menu -->
+    <!-- Difference table -->
+    <div class="difference-table">
+        <div class="difference-table__top">
+            <a href="index.html" class="logotype">
+                <img src="img/dist/logotype.svg" alt="zefir">
+            </a>
+            <a href="#" class="difference-table__close" aria-label="Закрыть">
+                <svg>
+                    <use xlink:href="img/dist/sprite.svg#icon-close"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="difference-table__content">
+            <table class="difference-table__table">
+                <tbody class="difference-table__tbody">
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Отличие от TI</td>
+                        <td class="difference-table__elem">
+                            <span>ZEFIR CENT BOT</span>
+                        </td>
+                        <td class="difference-table__elem">
+                            <span>ZEFIR OIL BOT</span>
+                        </td>
+                        <td class="difference-table__elem">
+                            <span>ZEFIR DOLLAR BOT</span>
+                        </td>
+                        <td class="difference-table__elem">
+                            <span>ZEFIR TI</span>
+                        </td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Начальный депозит</td>
+                        <td class="difference-table__elem">100$ - 200$</td>
+                        <td class="difference-table__elem">500$ - UNLIM.</td>
+                        <td class="difference-table__elem">500$ - UNLIM.</td>
+                        <td class="difference-table__elem">1000$ - UNLIM.</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Доступ к депозиту</td>
+                        <td class="difference-table__elem">В любое время</td>
+                        <td class="difference-table__elem">В любое время</td>
+                        <td class="difference-table__elem">В любое время</td>
+                        <td class="difference-table__elem">Спустя месяц</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Контроль депозита</td>
+                        <td class="difference-table__elem">Клиент</td>
+                        <td class="difference-table__elem">Клиент</td>
+                        <td class="difference-table__elem">Клиент</td>
+                        <td class="difference-table__elem">Компания</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Доходность</td>
+                        <td class="difference-table__elem">Плавающая</td>
+                        <td class="difference-table__elem">Плавающая</td>
+                        <td class="difference-table__elem">Плавающая</td>
+                        <td class="difference-table__elem">Фиксированная</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Полная прозрачность</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Да</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Сложный процент</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Да</td>
+                        <td class="difference-table__elem">Нет</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Размещение</td>
+                        <td class="difference-table__elem">MintX Markets</td>
+                        <td class="difference-table__elem">MintX Markets</td>
+                        <td class="difference-table__elem">MintX Markets</td>
+                        <td class="difference-table__elem">ZEFIR</td>
+                    </tr>
+                    <tr class="difference-table__row">
+                        <td class="difference-table__elem">Доп. доходность</td>
+                        <td class="difference-table__elem">От торгового оборота</td>
+                        <td class="difference-table__elem">От торгового оборота</td>
+                        <td class="difference-table__elem">От торгового оборота</td>
+                        <td class="difference-table__elem">По реферальной программе</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- End of difference table -->
+    <!-- Scripts -->
+    <script src="js/vendor.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
