@@ -331,6 +331,8 @@ span.ripple {
         transform: translateY(-50%);
         width: 23px;
         height: 17px;
+        opacity: 0;
+        transition: opacity 0.25s;
     }
     &__error {
         display: none;
