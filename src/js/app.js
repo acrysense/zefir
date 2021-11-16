@@ -195,6 +195,37 @@ document.addEventListener('DOMContentLoaded', function () {
     for (const button of buttons) {
         button.addEventListener('click', createRipple);
     }
+    
+    // EYE PASSWORD
+    const inputEye = document.querySelectorAll('.input-group__eye-btn')
+    const inputPassword = document.querySelectorAll('.input-group__input[type=password]')
+
+    document.addEventListener('mousedown', evt => {
+        if (evt.target.classList.contains('input-group__eye-btn')) {
+            evt.preventDefault()
+        }
+    })
+    
+    if (inputEye) {
+        inputEye.forEach((item) => {
+            item.addEventListener('click', (event) => {
+                event.preventDefault()
+
+                const inputGroupControl = item.closest('.input-group__control')
+                const inputCurrent = inputGroupControl.querySelector('input')
+
+                if (inputCurrent.type == 'password') {
+                    inputCurrent.type = 'text'
+
+                    item.classList.add('input-group__eye-btn--show')
+                } else {
+                    inputCurrent.type = 'password'
+
+                    item.classList.remove('input-group__eye-btn--show')
+                }
+            })
+        })
+    }
 
     // MOBILE MENU
     const hamburger = document.getElementById('hamburger-toggle')

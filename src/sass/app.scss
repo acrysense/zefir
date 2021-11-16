@@ -1391,13 +1391,13 @@
         flex-direction: column;
         justify-content: center;
         padding-left: 60px;
+        max-width: 655px;
+        width: 100%;
         min-height: 100vh;
         min-height: calc(var(--vh, 1vh) * 100);
-        max-width: 535px;
-        width: 100%;
 
         @media screen and (min-width: 768px) and (max-width: 1199px) {
-            max-width: 490px;
+            max-width: 550px;
         }
         @media screen and (max-width: 767px) {
             padding-left: 0;
@@ -1406,7 +1406,6 @@
         }
     }
     &__title {
-        margin-bottom: 30px;
         font-size: 60px;
         font-weight: normal;
 
@@ -1452,6 +1451,61 @@
             }
         }
     }
+    &__btn {
+        margin-top: 30px;
+        max-width: 475px;
+        width: 100%;
+
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            max-width: 490px;
+        }
+        @media screen and (max-width: 767px) {
+            max-width: 100%;
+        }
+    }
+    &__back {
+        margin-top: 40px;
+    }
+}
+
+.auth-form {
+    margin-top: 30px;
+    padding-top: 44px;
+    max-width: 475px;
+    width: 100%;
+    border-top: 1px solid rgba($light-color, 0.3);
+    &--no-bd {
+        padding-top: 0;
+        border-top: none;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+        max-width: 490px;
+    }
+    @media screen and (max-width: 767px) {
+        max-width: 100%;
+    }
+
+    &__group + &__group {
+        margin-top: 44px;
+    }
+    &__link {
+        margin-top: 25px;
+        font-size: 16px;
+        font-weight: normal;
+        text-decoration: underline;
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
+    }
+    &__btn {
+        margin-top: 30px;
+        width: 100%;
+    }
     &__text {
         display: block;
         margin-top: 40px;
@@ -1489,35 +1543,6 @@
         @media screen and (max-width: 767px) {
             font-size: 12px;
         }
-    }
-    &__back {
-        margin-top: 40px;
-    }
-}
-
-.auth-form {
-    margin-top: 30px;
-    padding-top: 44px;
-    border-top: 1px solid rgba($light-color, 0.3);
-    &__group + &__group {
-        margin-top: 44px;
-    }
-    &__link {
-        margin-top: 25px;
-        font-size: 16px;
-        font-weight: normal;
-        text-decoration: underline;
-
-        @media screen and (min-width: 768px) and (max-width: 1023px) {
-            font-size: 14px;
-        }
-        @media screen and (max-width: 767px) {
-            font-size: 12px;
-        }
-    }
-    &__btn {
-        margin-top: 30px;
-        width: 100%;
     }
 }
 

@@ -38,28 +38,39 @@
                     <form action="#" class="auth-form">
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
-                                <input type="password" class="input-group__input" id="input-name" placeholder="Логин или e-mail" required>
+                                <input type="text" class="input-group__input" id="input-name" placeholder="Логин или e-mail" required>
                                 <label for="input-name" class="input-group__label">Логин или e-mail</label>
-                                <svg class="input-group__icon">
-                                    <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
-                                </svg>
+                                <div class="input-group__icons">
+                                    <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
+                                        <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
+                                    </svg>
+                                </div>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Введите вашу почту. Это поле обязательное</span>
                         </div>
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
                                 <input type="password" class="input-group__input" id="input-password" placeholder="Пароль" required>
                                 <label for="input-password" class="input-group__label">Пароль</label>
-                                <svg class="input-group__icon">
-                                    <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
-                                </svg>
+                                <div class="input-group__icons">
+                                    <button class="input-group__eye-btn">
+                                        <svg class="input-group__eye"> <!-- Add class 'input-group__icon--done' for visible -->
+                                            <use xlink:href="img/dist/sprite.svg#icon-eye"></use>
+                                        </svg>
+                                    </button>
+                                    <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
+                                        <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
+                                    </svg>
+                                </div>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Пароль должен содержать не менее 8 знаков, включать буквы, цифры и специальные символы</span>
                         </div>
                         <a href="restore-password.html" class="auth-form__link">Забыли пароль?</a>
                         <button class="auth-form__btn btn" disabled>Войти</button>
+                        <span class="auth-form__text">Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a></span>
                     </form>
-                    <span class="auth__text">Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a></span>
                 </div>
             </div>
         </section>

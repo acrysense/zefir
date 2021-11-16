@@ -40,45 +40,49 @@
                             <div class="input-group__control">
                                 <input type="email" class="input-group__input" id="input-email" placeholder="E-mail" required>
                                 <label for="input-email" class="input-group__label">E-mail</label>
-                                <svg class="input-group__icon">
+                                <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Введите вашу почту. Это поле обязательное</span>
                         </div>
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
                                 <input type="text" class="input-group__input" id="input-login" placeholder="Логин" required>
                                 <label for="input-login" class="input-group__label">Логин</label>
-                                <svg class="input-group__icon">
+                                <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Это имя пользователя уже занято. Придумайте другое или выберите из предложенных</span>
                         </div>
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
                                 <input type="password" class="input-group__input" id="input-password-01" placeholder="Пароль" required>
                                 <label for="input-password-01" class="input-group__label">Пароль</label>
-                                <svg class="input-group__icon">
+                                <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Пароль должен содержать не менее 8 знаков, включать буквы, цифры и специальные символы</span>
                         </div>
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
                                 <input type="password" class="input-group__input" id="input-password-02" placeholder="Подтвердить пароль" required>
                                 <label for="input-password-02" class="input-group__label">Подтвердить пароль</label>
-                                <svg class="input-group__icon">
+                                <svg class="input-group__icon"> <!-- Add class 'input-group__icon--done' for visible -->
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
                             </div>
+                            <!-- Add class 'input-group__error--active' for visible -->
                             <span class="input-group__error" aria-live="polite">Пароль должен содержать не менее 8 знаков, включать буквы, цифры и специальные символы</span>
                         </div>
                         <button class="auth-form__btn btn" disabled>Зарегистрироваться</button>
+                        <span class="auth-form__text">Уже есть аккаунт? <a href="login.html">Войти</a></span>
                     </form>
-                    <span class="auth__text">Уже есть аккаунт? <a href="login.html">Войти</a></span>
                 </div>
             </div>
         </section>

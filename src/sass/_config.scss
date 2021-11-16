@@ -46,7 +46,7 @@ a {
     }
     &:active {
         color: $yellow-color;
-        transition: all 0.15s;
+        transition: all 0.15s linear;
     }
 }
 
@@ -306,6 +306,13 @@ span.ripple {
             outline: none;
         }
     }
+    &__input[type=password] {
+        padding: 17px 98px 17px 25px;
+        &:focus ~ .input-group__icons {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
     &__textarea {
         overflow: hidden;
         resize: none;
@@ -324,15 +331,61 @@ span.ripple {
         cursor: text;
         transition: all 0.25s ease;
     }
-    &__icon {
+    &__icons {
         position: absolute;
         top: 50%;
         right: 25px;
         transform: translateY(-50%);
-        width: 23px;
-        height: 17px;
+        display: flex;
+        align-items: center;
+        visibility: hidden;
         opacity: 0;
         transition: opacity 0.25s;
+    }
+    &__eye-btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        &:focus {
+            outline: none;
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: -1px;
+            transform: rotate(-54.5deg);
+            display: block;
+            width: 27px;
+            height: 1px;
+            transition: background 0.15s linear;
+        }
+        &--show {
+            &::before {
+                background: $light-color;
+            }
+        }
+    }
+    &__eye-btn + &__icon {
+        margin-left: 16px;
+    }
+    &__eye {
+        width: 25px;
+        height: 23px;
+        transition: opacity 0.25s;
+    }
+    &__icon {
+        display: none;
+        width: 23px;
+        height: 17px;
+        transition: opacity 0.25s;
+        &--done {
+            display: block;
+        }
     }
     &__error {
         display: none;
