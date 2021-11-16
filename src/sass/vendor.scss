@@ -1,0 +1,22 @@
+// FONTS LOAD SECTION
+@mixin font($fname, $fstyle, $fweight, $furl1, $furl2, $furl3) {
+	@font-face {
+		font-family: $fname;
+		font-style: $fstyle;
+		font-weight: $fweight;
+		font-display: swap;
+        src: local($fname), url($furl1) format('woff2'), url($furl2) format('woff'), url($furl3) format('embedded-opentype');
+    }
+}
+
+@include font('Hauora', normal, 300, '../fonts/Hauora/Hauora-Light.woff2', '../fonts/Hauora/Hauora-Light.woff', '../fonts/Hauora/Hauora-Light.eot');
+@include font('Hauora', normal, 400, '../fonts/Hauora/Hauora-Regular.woff2', '../fonts/Hauora/Hauora-Regular.woff', '../fonts/Hauora/Hauora-Regular.eot');
+@include font('Hauora', normal, 500, '../fonts/Hauora/Hauora-Medium.woff2', '../fonts/Hauora/Hauora-Medium.woff', '../fonts/Hauora/Hauora-Medium.eot');
+
+@include font('NeutralFace', normal, 400, '../fonts/NeutralFace/NeutralFaceRegular.woff2', '../fonts/NeutralFace/NeutralFaceRegular.woff', '../fonts/NeutralFace/NeutralFaceRegular.eot');
+@include font('NeutralFace', normal, 700, '../fonts/NeutralFace/NeutralFaceBold.woff2', '../fonts/NeutralFace/NeutralFaceBold.woff', '../fonts/NeutralFace/NeutralFaceBold.eot');
+
+// IMPORT SECTION
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss'; // Bootstrap Reboot collection
+@import 'node_modules/swiper/swiper.scss'; // Swiper
+@import 'node_modules/aos/dist/aos'; // AOS

@@ -9,6 +9,9 @@
 	"author": "Sviatoslav Andreiev <acrysense@gmail.com>",
 	"license": "ISC",
 	"devDependencies": {
+		"animate.css": "^4.1.1",
+		"animejs": "^3.2.1",
+		"aos": "^2.3.4",
 		"browser-sync": "^2.26.7",
 		"del": "^5.1.0",
 		"gulp": "^4.0.2",

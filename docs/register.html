@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zefir - Вход</title>
+    <title>Zefir - Регистрация</title>
     <!-- Styles -->
     <link rel="stylesheet" href="css/vendor.min.css">
     <link rel="stylesheet" href="css/app.min.css">
@@ -28,7 +28,7 @@
         <section class="auth" id="auth">
             <div class="container">
                 <div class="auth__wrapper">
-                    <h1 class="auth__title">Вход</h1>
+                    <h1 class="auth__title">Регистрация</h1>
                     <a href="#" class="auth__btn btn btn--transparent">
                         <svg>
                             <use xlink:href="img/dist/sprite.svg#icon-google"></use>
@@ -38,8 +38,8 @@
                     <form action="#" class="auth-form">
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
-                                <input type="password" class="input-group__input" id="input-name" placeholder="Логин или e-mail" required>
-                                <label for="input-name" class="input-group__label">Логин или e-mail</label>
+                                <input type="email" class="input-group__input" id="input-email" placeholder="E-mail" required>
+                                <label for="input-email" class="input-group__label">E-mail</label>
                                 <svg class="input-group__icon">
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
@@ -48,18 +48,37 @@
                         </div>
                         <div class="input-group auth-form__group">
                             <div class="input-group__control">
-                                <input type="password" class="input-group__input" id="input-password" placeholder="Пароль" required>
-                                <label for="input-password" class="input-group__label">Пароль</label>
+                                <input type="text" class="input-group__input" id="input-login" placeholder="Логин" required>
+                                <label for="input-login" class="input-group__label">Логин</label>
+                                <svg class="input-group__icon">
+                                    <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
+                                </svg>
+                            </div>
+                            <span class="input-group__error" aria-live="polite">Это имя пользователя уже занято. Придумайте другое или выберите из предложенных</span>
+                        </div>
+                        <div class="input-group auth-form__group">
+                            <div class="input-group__control">
+                                <input type="password" class="input-group__input" id="input-password-01" placeholder="Пароль" required>
+                                <label for="input-password-01" class="input-group__label">Пароль</label>
                                 <svg class="input-group__icon">
                                     <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
                                 </svg>
                             </div>
                             <span class="input-group__error" aria-live="polite">Пароль должен содержать не менее 8 знаков, включать буквы, цифры и специальные символы</span>
                         </div>
-                        <a href="restore-password.html" class="auth-form__link">Забыли пароль?</a>
-                        <button class="auth-form__btn btn" disabled>Войти</button>
+                        <div class="input-group auth-form__group">
+                            <div class="input-group__control">
+                                <input type="password" class="input-group__input" id="input-password-02" placeholder="Подтвердить пароль" required>
+                                <label for="input-password-02" class="input-group__label">Подтвердить пароль</label>
+                                <svg class="input-group__icon">
+                                    <use xlink:href="img/dist/sprite.svg#icon-checkbox"></use>
+                                </svg>
+                            </div>
+                            <span class="input-group__error" aria-live="polite">Пароль должен содержать не менее 8 знаков, включать буквы, цифры и специальные символы</span>
+                        </div>
+                        <button class="auth-form__btn btn" disabled>Зарегистрироваться</button>
                     </form>
-                    <span class="auth__text">Еще нет аккаунта? <a href="register.html">Зарегистрироваться</a></span>
+                    <span class="auth__text">Уже есть аккаунт? <a href="login.html">Войти</a></span>
                 </div>
             </div>
         </section>

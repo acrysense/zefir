@@ -20,6 +20,7 @@ let paths = {
         src: [
             'node_modules/inputmask/dist/inputmask.min.js',
             'node_modules/swiper/swiper-bundle.min.js',
+            'node_modules/aos/dist/aos.js',
         ],
         dest: baseDir + '/js',
     },
