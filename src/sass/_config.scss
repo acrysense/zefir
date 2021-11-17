@@ -305,9 +305,14 @@ span.ripple {
             border: 1px solid $yellow-color;
             outline: none;
         }
+
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
     }
     &__input[type=password] {
         padding: 17px 98px 17px 25px;
+        font-weight: normal;
         &:focus ~ .input-group__icons {
             visibility: visible;
             opacity: 1;
@@ -330,6 +335,10 @@ span.ripple {
         background: $primary-color;
         cursor: text;
         transition: all 0.25s ease;
+
+        @media screen and (max-width: 767px) {
+            font-size: 12px;
+        }
     }
     &__icons {
         position: absolute;
