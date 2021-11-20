@@ -281,6 +281,10 @@
     &__line {
         padding: 27px 0;
         border-bottom: 1px solid $dark-color;
+
+        @media screen and (max-width: 1023px) {
+            padding: 17px 0;
+        }
     }
     &__heading {
         font-size: 18px;
@@ -291,7 +295,6 @@
         opacity: 0.8;
     
         @media screen and (max-width: 1023px) {
-            padding: 17px 0;
             font-size: 12px;
         }
     }
