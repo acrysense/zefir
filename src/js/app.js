@@ -196,24 +196,25 @@ document.addEventListener('DOMContentLoaded', function () {
         button.addEventListener('click', createRipple);
     }
     
-    // EYE PASSWORD
-    const inputEye = document.querySelectorAll('.input-group__eye-btn')
-    const inputPassword = document.querySelectorAll('.input-group__input[type=password]')
-
-    document.addEventListener('mousedown', evt => {
-        if (evt.target.classList.contains('input-group__eye-btn')) {
-            evt.preventDefault()
-        }
+    // ANIMATIONS
+    AOS.init({
+        duration: 1200,
+        once: true,
     })
     
-    if (inputEye) {
-        inputEye.forEach((item) => {
+    // EYE PASSWORD
+    const inputEyeBtn = document.querySelectorAll('.input-group__eye-btn')
+
+    if (inputEyeBtn) {
+        inputEyeBtn.forEach((item) => {
             item.addEventListener('click', (event) => {
                 event.preventDefault()
 
                 const inputGroupControl = item.closest('.input-group__control')
                 const inputCurrent = inputGroupControl.querySelector('input')
 
+                inputCurrent.focus()
+                
                 if (inputCurrent.type == 'password') {
                     inputCurrent.type = 'text'
 
@@ -417,7 +418,7 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesPerView: 'auto',
             centeredSlides: true,
             centeredSlidesBounds: true,
-            speed: 1200,
+            speed: 1300,
             breakpoints: {
                 768: {
                     slidesPerView: 1,
@@ -431,12 +432,6 @@ document.addEventListener('DOMContentLoaded', function () {
             },
         })
     }
-    
-    // ANIMATIONS
-    AOS.init({
-        duration: 1200,
-        once: true,
-    })
     
     // SCROLL
     let prevScrollpos = window.pageYOffset;

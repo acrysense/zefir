@@ -882,6 +882,10 @@
                     opacity: 1;
                     transition-delay: 0.4s;
                 }
+                .progress-circle__progress {
+                    stroke-dasharray: 465 999;
+                    transition: stroke-dasharray 3s linear 0s;
+                }
             }
             .swiper-button-prev,
             .swiper-button-next {
@@ -971,7 +975,7 @@
             counter-increment: item-counter;
             content: '0' counter(item-counter);
             position: absolute;
-            top: 0;
+            top: -1px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -983,9 +987,7 @@
             font-weight: normal;
             text-align: center;
             opacity: 0;
-            border: 1px solid $primary-color;
-            border-radius: 50%;
-            transition: all 0.4s;
+            transition: all 0.8s ease 0.4s;
         }
 
         @media screen and (min-width: 1024px) and (max-width: 1199px) {
@@ -1023,7 +1025,7 @@
         font-size: 18px;
         font-weight: 300;
         opacity: 0;
-        transition: all 0.4s;
+        transition: all 0.8s ease 0.4s;
 
         @media screen and (min-width: 768px) and (max-width: 1023px) {
             font-size: 14px;
@@ -1072,6 +1074,45 @@
         @media screen and (max-width: 767px) {
             display: none;
         }
+    }
+}
+
+.progress-circle {
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-90deg);
+    &__svg {
+        display: none;
+
+        @media screen and (min-width: 1200px) {
+            &--desktop {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1199px) {
+            &--tablet {
+                display: block;
+            }
+        }
+        @media screen and (max-width: 767px) {
+            &--mobile {
+                display: block;
+            }
+        }
+    }
+    &__background {
+        fill: none; 
+        stroke: transparent;
+        stroke-width: 1px;
+    }
+    &__progress {
+        fill: none; 
+        stroke: $primary-color;
+        stroke-width: 1px;
+        stroke-dasharray: 0 999;
+        stroke-dashoffset: 0px;
+        transition: stroke-dasharray 0.6s linear 0s;
     }
 }
 

@@ -282,7 +282,7 @@ span.ripple {
     &__textarea {
         display: block;
         appearance: none;
-        padding: 17px 58px 17px 25px;
+        padding: 17px 98px 17px 25px;
         width: 100%;
         font-size: 16px;
         font-weight: 300;
@@ -304,6 +304,10 @@ span.ripple {
         &:focus {
             border: 1px solid $yellow-color;
             outline: none;
+            & ~ .input-group__icons > .input-group__eye-btn {
+                visibility: visible;
+                opacity: 1;
+            }
         }
 
         @media screen and (max-width: 767px) {
@@ -311,12 +315,7 @@ span.ripple {
         }
     }
     &__input[type=password] {
-        padding: 17px 98px 17px 25px;
         font-weight: normal;
-        &:focus ~ .input-group__icons {
-            visibility: visible;
-            opacity: 1;
-        }
     }
     &__textarea {
         overflow: hidden;
@@ -344,21 +343,22 @@ span.ripple {
         position: absolute;
         top: 50%;
         right: 25px;
+        z-index: 1;
         transform: translateY(-50%);
         display: flex;
         align-items: center;
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 0.25s;
     }
     &__eye-btn {
         position: relative;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 0;
         background: transparent;
         border: 0;
+        opacity: 0;
+        transition: opacity 0.25s;
         &:focus {
             outline: none;
         }
