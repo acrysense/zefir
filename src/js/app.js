@@ -203,7 +203,25 @@ document.addEventListener('DOMContentLoaded', function () {
     })
     
     // EYE PASSWORD
+    const inputList = document.querySelectorAll('.input-group__input')
     const inputEyeBtn = document.querySelectorAll('.input-group__eye-btn')
+
+    if (inputList) {
+        inputList.forEach((item) => {
+            item.addEventListener('input', () => {
+                const inputGroupControl = item.closest('.input-group__control')
+                const inputCurrent = inputGroupControl.querySelector('.input-group__eye-btn')
+
+                if (inputCurrent) {
+                    if (item.value.length > 0) {
+                        inputCurrent.classList.add('input-group__eye-btn--active')
+                    } else  {
+                        inputCurrent.classList.remove('input-group__eye-btn--active')
+                    }
+                }
+            })
+        })
+    }
 
     if (inputEyeBtn) {
         inputEyeBtn.forEach((item) => {

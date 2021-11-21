@@ -304,10 +304,6 @@ span.ripple {
         &:focus {
             border: 1px solid $yellow-color;
             outline: none;
-            & ~ .input-group__icons > .input-group__eye-btn {
-                visibility: visible;
-                opacity: 1;
-            }
         }
 
         @media screen and (max-width: 767px) {
@@ -372,6 +368,10 @@ span.ripple {
             width: 27px;
             height: 1px;
             transition: background 0.15s linear;
+        }
+        &--active {
+            visibility: visible;
+            opacity: 1;
         }
         &--show {
             &::before {
